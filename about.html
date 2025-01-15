@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - GKF Agroforestry</title>
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #333;
+        background: #f0f8ff;
+      }
+      header {
+        background: linear-gradient(
+            135deg,
+            rgba(118, 255, 80, 0.427),
+            rgba(57, 173, 4, 0.384)
+          ),
+          url("Images/gabriel-jimenez-jin4W1HqgL4-unsplash.jpg") no-repeat
+            center center/cover;
+        color: white;
+        padding: 2rem 0;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+      header h1 {
+        font-size: 3rem;
+      }
+      nav {
+        background: #3a4b3b;
+        color: white;
+        display: flex;
+        justify-content: center;
+        padding: 1rem 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        margin-bottom: 4rem;
+      }
+      nav a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        margin: 0 15px;
+        font-size: 1rem;
+      }
+      nav a:hover {
+        text-decoration: underline;
+        color: rgb(41, 177, 41);
+      }
+      section {
+        padding: 2rem;
+        margin: auto;
+        max-width: 1400px;
+      }
+      section h2 {
+        font-size: 2.5rem;
+        color: #3a4b3b;
+        text-align: center;
+        margin-bottom: 1rem;
+      }
+      section p {
+        font-size: 1.2rem;
+        line-height: 1.8;
+        margin-bottom: 1rem;
+      }
+      section ul {
+        list-style: disc;
+        margin: 1rem 0;
+        padding-left: 2rem;
+      }
+      section ul li {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+      }
+      .mission,
+      .vision {
+        display: flex;
+      }
+      .core ul {
+        text-align: center;
+        list-style-type: none;
+      }
+      img {
+        max-width: 700px;
+        max-height: 500px;
+        border-radius: 8px;
+      }
+      footer {
+        background: #333;
+        color: white;
+        text-align: center;
+        padding: 1rem 0;
+        margin-top: 4rem;
+      }
+      footer a {
+        color: #ff7f50;
+        text-decoration: none;
+      }
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 1s ease, transform 1s ease;
+      }
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const elementsToFadeIn = document.querySelectorAll(".fade-in");
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+              }
+            });
+          },
+          { threshold: 0.1 }
+        );
+
+        elementsToFadeIn.forEach((element) => {
+          observer.observe(element);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <header>
+      <h1>About Us</h1>
+    </header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="team.html">Our Team</a>
+    </nav>
+    <section class="mission fade-in">
+      <section>
+        <h2>Our Mission</h2>
+        <p>
+          At GKF Agroforestry, our mission is to promote sustainable farming
+          practices that empower small and marginal farmers. We aim to
+          contribute to global food security and climate action through
+          regenerative agriculture and agroforestry.
+        </p>
+        <ul>
+          <li>Fostering tree plantations for ecological balance.</li>
+          <li>Adopting regenerative agriculture to restore soil health.</li>
+          <li>Combating climate change through carbon sequestration.</li>
+          <li>
+            Encouraging community development and equitable market practices.
+          </li>
+        </ul>
+      </section>
+      <img src="Images/pexels-kelly-1179532-2382904.jpg" alt="" />
+    </section>
+    <section class="vision fade-in">
+      <img src="Images/pexels-dibakar-roy-2432543-18489653.jpg" alt="" />
+      <section>
+        <h2>Our Vision</h2>
+        <p>
+          We envision a world where sustainable farming practices ensure food
+          security, improve livelihoods, and preserve the environment for future
+          generations. Our focus on innovative solutions and community
+          collaboration drives us toward this goal.
+        </p>
+      </section>
+    </section>
+    <section class="core fade-in">
+      <h2>Core Values</h2>
+      <ul>
+        <li>
+          <b>Sustainability:</b> Prioritizing the environment and long-term
+          impact
+        </li>
+        <li>
+          <b>Community:</b> Empowering local farmers and fostering partnerships
+        </li>
+        <li><b>Innovation:</b> Using advanced techniques for agroforestry</li>
+        <li><b>Integrity:</b> Operating transparently and ethically</li>
+      </ul>
+    </section>
+    <footer>
+      <p>
+        &copy; 2025 GKF Agroforestry Pvt. Ltd. All rights reserved. |
+        <a href="#">Privacy Policy</a>
+      </p>
+    </footer>
+  </body>
+</html>

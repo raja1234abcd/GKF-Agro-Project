@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GKF Agroforestry</title>
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #333;
+        background: #f0f8ff;
+      }
+      header {
+        background: linear-gradient(
+            135deg,
+            rgba(118, 255, 80, 0.427),
+            rgba(57, 173, 4, 0.384)
+          ),
+          url("Images/gabriel-jimenez-jin4W1HqgL4-unsplash.jpg") no-repeat
+            center center/cover;
+        color: white;
+        padding: 2rem 0;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+      header h1 {
+        font-size: 3rem;
+      }
+      header p {
+        font-size: 1.2rem;
+        margin: 0.5rem 0 0;
+      }
+      nav {
+        background: #3a4b3b;
+        color: white;
+        display: flex;
+        justify-content: center;
+        padding: 1rem 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        margin-bottom: 4rem;
+      }
+      nav a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        margin: 0 15px;
+        font-size: 1rem;
+      }
+      nav a:hover {
+        text-decoration: underline;
+        color: rgb(41, 177, 41);
+      }
+      .hero {
+        position: relative;
+        overflow: hidden;
+        padding: 8rem;
+        text-align: center;
+        color: rgb(255, 255, 255);
+        text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+        margin-bottom: 4rem;
+        border-radius: 8px;
+      }
+      .hero video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+      }
+      .hero h1 {
+        font-size: 3.5rem;
+      }
+      .hero p {
+        font-size: 1.5rem;
+      }
+      section#about {
+        padding: 4rem;
+        color: rgb(0, 0, 0);
+        font-size: large;
+        display: flex;
+      }
+      li {
+        padding: 6px;
+      }
+      .about_img {
+        max-width: 50%;
+        max-height: 25%;
+      }
+      section {
+        padding: 2rem;
+        margin: auto;
+        max-width: 1200px;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 1s ease-out, transform 1s ease-out;
+      }
+      section.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .projects {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+        gap: 1.5rem;
+      }
+      .team {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+      }
+      .card {
+        background: white;
+        border-radius: 8px;
+        padding: 1rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        overflow: hidden;
+      }
+      .card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-bottom: 3px solid #ff7f50;
+      }
+      .card h3 {
+        margin: 1rem 0 0.5rem;
+        color: #ff4500;
+      }
+      .card p {
+        margin: 0;
+      }
+      section#contact {
+        background: linear-gradient(300deg, #00ff91, #d0f05e, #00fd15);
+        background-size: 180% 180%;
+        animation: gradient-animation 18s ease infinite;
+        max-width: 100%;
+        display: grid;
+        text-align: center;
+        height: 200px;
+      }
+      @keyframes gradient-animation {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+      footer {
+        background: #333;
+        color: white;
+        text-align: center;
+        padding: 1rem 0;
+        margin-top: 0rem;
+      }
+      footer a {
+        color: #ff7f50;
+        text-decoration: none;
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const sections = document.querySelectorAll("section");
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+              }
+            });
+          },
+          { threshold: 0.1 }
+        );
+
+        sections.forEach((section) => {
+          observer.observe(section);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <header>
+      <h1>GKF Agroforestry</h1>
+      <p>
+        Growing a Greener Future: Sustainable Solutions Rooted in Agroforestry
+      </p>
+    </header>
+    <nav>
+      <a href="about.html">About Us</a>
+      <a href="projects.html">Projects</a>
+      <a href="team.html">Our Team</a>
+    </nav>
+    <section class="hero">
+      <video autoplay muted loop>
+        <source src="Images/1560989-hd_1280_720_30fps.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <h1>Welcome to GKF Agroforestry</h1>
+      <p>
+        Promoting Agroforestry and Regenerative Agriculture for Sustainable
+        Development
+      </p>
+    </section>
+    <section id="about">
+      <section>
+        <h2>About Us</h2>
+        <p>
+          We aim to empower small and marginal farmers through sustainable
+          farming practices, contributing to climate action and global food
+          security.
+        </p>
+        <ul>
+          <li>Promoting tree plantations</li>
+          <li>Focus on regenerative agriculture</li>
+          <li>Climate action through carbon sequestration</li>
+          <li>Community development and fair market practices</li>
+        </ul>
+      </section>
+      <img
+        class="about_img"
+        src="Images/pexels-nicolasveithen-1719669.jpg"
+        alt=""
+      />
+    </section>
+    <section id="projects">
+      <h2>Our Projects</h2>
+      <div class="projects">
+        <div class="card">
+          <img src="Images/henry-be-JR8XZ-gdZrA-unsplash.jpg" alt="Project A" />
+          <h3>Grouped Sustainable Agroforestry Project</h3>
+          <p>Scale: 30,000 Hectares</p>
+          <p>Partners: Clime Trek Limited</p>
+          <p>Number of farmers: 26,498</p>
+        </div>
+        <div class="card">
+          <img
+            src="Images/markus-winkler-HeqXGxnsnX4-unsplash.jpg"
+            alt="Project B"
+          />
+          <h3>Enhancing Rural Livelihoods of Farmers Through Carbon Finance</h3>
+          <p>Scale: 17,400 Hectares</p>
+          <p>Partners: South Pole</p>
+          <p>Number of farmers: 14,300</p>
+        </div>
+      </div>
+    </section>
+    <section id="team">
+      <h2>Meet Our Team</h2>
+      <div class="team">
+        <div class="card">
+          <h3>SK. M. Pasha</h3>
+          <p>Founder & CEO</p>
+          <p>Agroforestry Expert (9 years experience)</p>
+        </div>
+        <div class="card">
+          <h3>A. Ariff Khan</h3>
+          <p>Chief Consultant</p>
+          <p>Agroforestry Scientist (37 years experience)</p>
+        </div>
+        <div class="card">
+          <h3>MD. Rajiya Begum</h3>
+          <p>Gender Equality & Environmental Professional</p>
+          <p>6 years experience</p>
+        </div>
+      </div>
+    </section>
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p>
+        Email:
+        <a href="mailto:contact@gkfagroforestry.com"
+          >contact@gkfagroforestry.com</a
+        >
+      </p>
+      <p>Phone: +91 9676753983</p>
+      <p>
+        Address: Near Seetharama Canal, Anjanapuram, Burgampahad, Telangana -
+        507114
+      </p>
+    </section>
+    <footer>
+      <p>
+        &copy; 2025 GKF Agroforestry Pvt. Ltd. All rights reserved. |
+        <a href="#">Privacy Policy</a>
+      </p>
+    </footer>
+  </body>
+</html>
